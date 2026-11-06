@@ -1,0 +1,37 @@
+location: Ankara, Türkiye
+preferred_roles:
+  - Senior Backend Engineer
+  - Java / Spring Boot Engineer
+  - Python / FastAPI Engineer
+  - GenAI / AI Platform Engineer
+  - LLM Backend Engineer
+  - Distributed Systems Engineer
+required:
+  remote: true
+  minimum_contract_months: 6
+  full_time_or_long_contract: true
+# Search profile: list only jobs that are Remote AND in the EMEA region (EMEA-wide, worldwide or any EMEA
+# country/city; see `regions` in config/locations.yaml). B2B/contract is NOT required (`engagement: []`);
+# jobs that do state B2B/contract still rank +10. To require it again use `engagement: [b2b, contract]`.
+# Everything else is eliminated but stays auditable (report groups, archive *-rejected.md, `list --rejected`).
+# Country-based EMEA jobs are never VERIFIED_TR: Türkiye eligibility must be checked by hand, and without a
+# B2B/contract statement they often require residence in that country. Replaces required.worldwide_or_b2b.
+# Delete this whole block to return to the old rules. roles.* lists REPLACE the built-in defaults.
+search:
+  regions: [EMEA]
+  remote: true
+  engagement: []
+  turkiye_any_engagement: true
+  roles:
+    include: [engineer, developer, programmer, sre, devops, mlops, backend, back-end, full-stack, fullstack]
+    exclude: [frontend, front-end, ios, android, mobile, react native, flutter, ui, ux, embedded, firmware, game, unity, unreal, salesforce, wordpress, shopify]
+    exclude_always: [sales, presales, pre-sales, solutions, solution, support, customer, field, mechanical, civil, electrical, electronics, chemical, structural, manufacturing, process engineer, hvac, construction, hardware, qa, quality, test, tester, testing, sdet, designer, design engineer, manager, management, director, head of, vp, vice president, recruiter, marketing, account, advocate, evangelist, relations, intern, internship, working student, werkstudent, apprentice, trainee]
+    rescue: [backend, back-end, platform, distributed, python, java, golang, llm, ai, ml, genai, data, cloud, devops, api]
+technologies:
+  strong: [java, spring boot, python, fastapi, postgresql, kafka, microservices, distributed systems]
+  relevant: [llm, genai, ai platform, kubernetes, docker, aws, redis, rag]
+# Personal company exclusions / low-priority lists live in config/profile.local.yaml (gitignored,
+# merged at load time). See config/profile.local.example.yaml for the format.
+exclude_company_policy: all_roles
+# Optional: do not list jobs published more than N days ago (undated jobs are kept). Off by default.
+# max_posting_age_days: 30

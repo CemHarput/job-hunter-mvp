@@ -1,0 +1,104 @@
+# Location table for the eligibility filter (edit freely; no code change needed).
+# A job is marked ineligible ONLY when every listed alternative (split on | ; / or " or ") is a
+# restricted place below, or on-site/hybrid without remote. Anything not listed stays "unknown"
+# and shows up in `python -m jobhunter locations --unclassified` so you can add it here.
+# Abbreviations of 2-5 capitals (US, UK, EU, NYC...) are matched case-sensitively.
+version: 1
+
+# Open to a worldwide audience -> global_unconfirmed (Türkiye hiring still unverified).
+open: [Worldwide, Global, Anywhere, Work from anywhere]
+
+# Regions that may include Türkiye -> global_unconfirmed with "Bölgesel ... Türkiye doğrulanmadı".
+regional: [EMEA, Europe, MENA, META, Middle East, Africa]
+
+# Türkiye (remote or Ankara -> candidate_tr; country name alone -> unknown).
+turkiye: [Turkey, Türkiye, Turkiye, Ankara]
+# Türkiye cities other than Ankara: remote -> candidate_tr, on-site/hybrid -> ineligible.
+turkiye_other_cities: [Istanbul, İstanbul, Izmir, İzmir, Antalya, Bursa, Kocaeli]
+
+# Extra words to ignore when looking for unrecognised words in a location.
+ignore: [time zone, timezone, HQ, Office]
+
+# canonical label: [aliases]. The label itself is also an alias.
+restricted:
+  United States: [US, USA, U.S., U.S.A., United States of America, San Francisco, New York City, New York, NYC, Seattle, Boston, Austin, Chicago, Los Angeles, Denver, Washington, Washington DC, Palo Alto, Dallas, Philadelphia, Miami, Nashville, Portland, Raleigh, Princeton, Boulder, New Jersey, Massachusetts, Colorado]
+  United Kingdom: [UK, GB, Great Britain, England, Scotland, London, Manchester, Cardiff]
+  Canada: [Toronto, Vancouver, Montreal, Ontario, British Columbia, CAN]
+  Ireland: [Dublin, Cork, Republic of Ireland]
+  Germany: [Berlin, Munich, Cologne]
+  Netherlands: [The Netherlands, Holland, Amsterdam]
+  Spain: [Madrid, Barcelona]
+  Portugal: [Lisbon]
+  Poland: [Warsaw, Warszawa, Krakow]
+  Romania: [Bucharest]
+  Bulgaria: [Sofia]
+  Greece: [Athens]
+  Norway: [Oslo]
+  Switzerland: [Zurich]
+  India: [Bangalore, Bengaluru, Gurugram, Gurgaon, Hyderabad, Pune]
+  Ukraine: [Kyiv, Kiev]
+  France: [Paris]
+  Italy: []
+  Sweden: [Stockholm]
+  Denmark: []
+  Finland: []
+  Austria: [Vienna]
+  Belgium: []
+  Czechia: []
+  Hungary: []
+  Serbia: []
+  Croatia: []
+  Estonia: []
+  Latvia: []
+  Lithuania: [Vilnius]
+  Israel: [Herzliya]
+  Brazil: [São Paulo, Florianópolis]
+  Mexico: []
+  Argentina: []
+  Colombia: []
+  Australia: [Sydney]
+  Japan: []
+  Singapore: []
+  China: [Beijing]
+  Taiwan: [Taipei]
+  # EMEA countries added for the search profile (regions.EMEA below). "Georgia" is not listed on purpose:
+  # it collides with the US state.
+  South Africa: [Cape Town, Johannesburg]
+  Egypt: [Cairo]
+  Nigeria: [Lagos]
+  Kenya: [Nairobi]
+  Morocco: []
+  United Arab Emirates: [UAE, Dubai, Abu Dhabi]
+  Saudi Arabia: [Riyadh]
+  Qatar: [Doha]
+  Slovakia: []
+  Slovenia: []
+  Luxembourg: []
+  Cyprus: []
+  Malta: []
+  Iceland: []
+  Albania: []
+  North Macedonia: []
+  Bosnia and Herzegovina: []
+  Montenegro: []
+  Moldova: []
+  # Regions. Move EU/EEA to `regional` above if you want them kept as "possibly open".
+  Americas: [North America, NAMER, LatAm, Latin America, South America]
+  APAC: [APJ, Asia Pacific, Asia]
+  EU/EEA: [EU, EEA, European Union]
+  DACH: []
+  Nordics: []
+
+# Matched only as ", XX" at the end of an alternative (e.g. "San Francisco, CA"); counts as United States.
+us_state_codes: ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC"]
+
+# Named regions for the search profile (profile.yaml `search.regions`). Items are `open`/`regional`
+# terms or `restricted` labels above. A job located in any of them passes the region test; a location
+# in a country listed here is "country-based EMEA" (Türkiye eligibility must be verified).
+regions:
+  EMEA: [EMEA, Europe, MENA, META, Middle East, Africa, United Kingdom, Ireland, Germany, Netherlands, Spain,
+         Portugal, Poland, Romania, Bulgaria, Greece, Norway, Switzerland, Ukraine, France, Italy, Sweden,
+         Denmark, Finland, Austria, Belgium, Czechia, Hungary, Serbia, Croatia, Estonia, Latvia, Lithuania,
+         Israel, EU/EEA, DACH, Nordics, South Africa, Egypt, Nigeria, Kenya, Morocco, United Arab Emirates,
+         Saudi Arabia, Qatar, Slovakia, Slovenia, Luxembourg, Cyprus, Malta, Iceland, Albania,
+         North Macedonia, Bosnia and Herzegovina, Montenegro, Moldova]

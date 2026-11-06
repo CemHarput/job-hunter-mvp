@@ -1,0 +1,4 @@
+# Copy to profile.local.yaml (gitignored). Lists are merged with config/profile.yaml.
+exclude_companies:
+  - Example Corp
+low_priority_companies: [Example Labs]

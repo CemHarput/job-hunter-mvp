@@ -1,0 +1,59 @@
+# Verified public ATS boards (endpoints checked on 2026-11-06: HTTP 200, valid JSON, jobs > 0).
+# Employer identity confirmed from company_name (Greenhouse) or job URLs (Lever, Ashby).
+# Türkiye eligibility is NOT verified by this list; every job still needs eligibility checking.
+# Supabase is low priority (see profile.yaml), not excluded.
+greenhouse:
+  - token: gitlab
+    company: GitLab
+  - token: canonical
+    company: Canonical
+  - token: elastic
+    company: Elastic
+  - token: grafanalabs
+    company: Grafana Labs
+  - token: mongodb
+    company: MongoDB
+  - token: datadog
+    company: Datadog
+  - token: cloudflare
+    company: Cloudflare
+  - token: anthropic
+    company: Anthropic
+  - token: launchdarkly
+    company: LaunchDarkly
+  - token: planetscale
+    company: PlanetScale
+  - token: appsflyer
+    company: AppsFlyer
+  - token: sumup
+    company: SumUp
+  - token: getyourguide
+    company: GetYourGuide
+  - token: monzo
+    company: Monzo
+  - token: bitpanda
+    company: Bitpanda
+lever:
+  - site: spotify
+    company: Spotify
+  - site: kpler
+    company: Kpler
+ashby:
+  - board: clickhouse
+    company: ClickHouse
+  - board: cohere
+    company: Cohere
+  - board: elevenlabs
+    company: ElevenLabs
+  - board: synthesia
+    company: Synthesia
+  - board: n8n
+    company: n8n
+  - board: resend
+    company: Resend
+  - board: posthog
+    company: PostHog
+  - board: temporal
+    company: Temporal
+  - board: supabase
+    company: Supabase

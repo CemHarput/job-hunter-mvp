@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "slug": "emea-remote-contract-filter",
+  "status": "implemented",
+  "review": "not_requested",
+  "created_at": "2026-11-06T09:53:05.940600+00:00",
+  "updated_at": "2026-11-06T10:18:38.862728+00:00",
+  "approved_plan_sha256": "de5fd54b2f8610549e505dc2abc359d6e81e639c71e92e1385ae53393f2ed258",
+  "baseline_head": "833c731a9725f06533a0b3980968b6fe5924f22f",
+  "approved_at": "2026-11-06T10:07:23.475649+00:00"
+}
